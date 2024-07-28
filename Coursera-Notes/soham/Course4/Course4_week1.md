@@ -6,7 +6,7 @@ Computer Vision Problems
 
 * Image classification
 * Object detection
-* Neural Style transfer (Input an original image andget it repainted in different style)
+* Neural Style transfer (Input an original image and get it repainted in different style)
 
 Images can become very large (in size)
 Previously we trained neural network on a 28 by 28 images with 3 channels (RGB) summing up to 12288 input features
@@ -108,7 +108,9 @@ Let's start by implementing the backward pass for a CONV layer.
 
 This is the formula for computing $dA$ with respect to the cost for a certain filter $W_c$ and a given training example:
 
-$$dA \mathrel{+}= \sum _{h=0} ^{n_H} \sum_{w=0} ^{n_W} W_c \times dZ_{hw} \tag{1}$$
+$$
+dA \mathrel{+}= \sum_{h=0}^{n_H} \sum_{w=0}^{n_W} W_c \times dZ_{hw}
+$$
 
 Where $W_c$ is a filter and $dZ_{hw}$ is a scalar corresponding to the gradient of the cost with respect to the output of the conv layer Z at the hth row and wth column (corresponding to the dot product taken at the ith stride left and jth stride down). Note that at each time, you multiply the same filter $W_c$ by a different dZ when updating dA. We do so mainly because when computing the forward propagation, each filter is dotted and summed by a different a_slice. Therefore when computing the backprop for dA, you are just adding the gradients of all the a_slices.
 
@@ -122,7 +124,9 @@ da_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :] += W[:,:,:,c] * dZ[i,
 
 This is the formula for computing $dW_c$ ($dW_c$ is the derivative of one filter) with respect to the loss:
 
-$$dW_c  \mathrel{+}= \sum _{h=0} ^{n_H} \sum_{w=0} ^ {n_W} a_{slice} \times dZ_{hw}  \tag{2}$$
+$$
+dW_c \mathrel{+}= \sum_{h=0}^{n_H} \sum_{w=0}^{n_W} a_{slice} \times dZ_{hw} \tag{2}
+$$
 
 Where $a_{slice}$ corresponds to the slice which was used to generate the activation $Z_{ij}$. Hence, this ends up giving us the gradient for $W$ with respect to that slice. Since it is the same $W$, we will just add up all such gradients to get $dW$.
 
