@@ -132,7 +132,7 @@ So there are basically 3 things to you can do to get better performance with any
 * Use deeper Network
 * Increase the width of layers. (No. of units or dimensions)
 
-So one of these things is picked depending on the enironment
+So one of these things is picked depending on the environment
 
 ## Transfer Learning
 
