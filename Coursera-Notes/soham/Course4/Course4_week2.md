@@ -1,4 +1,4 @@
-# Notes for week 1 of Course 4
+# Notes for week 2 of Course 4
 
 ## Case studies
 
