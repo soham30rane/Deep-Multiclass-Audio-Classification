@@ -60,15 +60,13 @@
 - [Tech Stack](#tech-stack)
 
 
-- [Mini-projects](#Mini-projects)
+- [Contributors](#contributors)
   
-- [Challenges Faced](#challenges-faced)
+- [Future Prospects](#future-prospects)
 
-- [Results](#results)
+- [Resources](#resources)
 
-- [Acknowledgements](#acknowledgements)
-
-- [References](#references)
+- [Acknowledgement](#acknowledgement)
 
 ## Introduction
 This project focuses on developing a robust audio classifier that processes user-provided audio files and accurately identifies the category or class to which the audio belongs.
